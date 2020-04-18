@@ -1,0 +1,61 @@
+<!DOCTYPE HTHML>
+<html>
+<head>
+<title>Autocomplete</title>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js">
+</script>
+
+
+<script>
+
+//data for the autocomplete
+
+var stateList = 	"Alabama*Alaska*Arizona*Arkansas*" +
+"California*Colorado*Connecticut*Delaware*" +
+"Florida*Georgia*Hawaii*Idaho*Illinois*" +
+"Indiana*Iowa*Kansas*Kentucky*Louisiana*" +
+"Maine*Maryland*Massachusetts*" +
+"Michigan*Minnesota*Mississippi*" +
+"Missouri*Montana*Nebraska*Nevada*" +
+"New Hampshire*New Jersey*New Mexico*" +
+"New York*North Carolina*North Dakota*Ohio*" +
+"Oklahoma*Oregon*Pennsylvania*Rhode Island*" +
+"South Carolina*South Dakota*Tennessee*Texas*" +
+"Utah*Vermont*Virginia*Washington*" +
+"West Virginia*Wisconsin*Wyoming*";
+
+var languages = ["English","Spanish","French","German"];
+
+$(function(){
+$("#languagex").autocomplete({source: languages})
+});
+
+$(function(){
+$("#searchfield").autocomplete({source: stateList.split("*")})
+});
+
+
+
+</script>
+
+</head>
+<body>
+
+<h1>Autocomplete jquery</h1>
+
+<div class="ui-widget">
+	<label for="searchfield">Please enter your state: </label>
+	<input id="searchfield">
+</div>
+
+<div class="ui-widget">
+	<label for="languagex">Please enter your language: </label>
+	<input id="languagex">
+</div>
+
+</body>
+</html>
